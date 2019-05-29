@@ -8,23 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    EditText cantidad;
-    Button generar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(new Lienzo(this));
 
-        cantidad=findViewById(R.id.txtNumeroCirculos);
-        generar=findViewById(R.id.btnGenerar);
-        generar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(MainActivity.this,Main2Activity.class);
-                i.putExtra("Cantidad",Integer.parseInt(cantidad.getText().toString()));
-                startActivity(i);
-            }
-        });
     }
 }
